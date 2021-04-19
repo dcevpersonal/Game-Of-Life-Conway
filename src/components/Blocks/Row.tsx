@@ -32,4 +32,6 @@ function Row(props: props) {
   );
 }
 
-export default React.memo(Row);
+export default React.memo(Row, (prev, next) => {
+  return JSON.stringify(prev.col) === JSON.stringify(next.col);
+});
