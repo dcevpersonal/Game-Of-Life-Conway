@@ -13,12 +13,20 @@ function App() {
     });
   }, []);
 
+  const setSimReset = useCallback(() => {
+    setSimReseting((s) => {
+      return s ? false : true;
+    });
+  }, []);
+
   const [simRunning, setSimRunning] = useState(false);
+  const [simReseting, setSimReseting] = useState(false);
   const [buttonText, setButtonText] = useState("Start");
   return (
     <div className="App">
       <Button onClick={setSimRun} text={buttonText} />
-      <Grid simRunning={simRunning} />
+      <Button onClick={setSimReset} text="Reset" />
+      <Grid simRunning={simRunning} simReseting={simReseting} />
     </div>
   );
 }

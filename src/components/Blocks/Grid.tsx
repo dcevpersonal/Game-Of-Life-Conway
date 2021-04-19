@@ -5,6 +5,7 @@ import "./Grid.scss";
 
 interface props {
   simRunning: boolean;
+  simReseting: boolean;
 }
 
 function Grid(props: props) {
@@ -87,6 +88,12 @@ function Grid(props: props) {
     }
   };
 
+  const resetGrid = () => {
+    setGrid(() => {
+      return generateEmptyArray();
+    });
+  };
+
   const [grid, setGrid] = useState(() => {
     return generateEmptyArray();
   });
@@ -108,6 +115,10 @@ function Grid(props: props) {
     startSimulation();
   }, [props.simRunning]);
 
+  useEffect(() => {
+    resetGrid();
+  }, [props.simReseting]);
+
   return (
     <table>
       <tbody>
@@ -120,6 +131,7 @@ function Grid(props: props) {
               onMouseLeave={setMouseLeave}
               onMouseDown={setMouseDown}
               onMouseUp={setMouseUp}
+              onClick={setSquare}
             />
           );
         })}

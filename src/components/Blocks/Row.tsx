@@ -7,6 +7,7 @@ interface props {
   onMouseLeave(r: number, c: number): void;
   onMouseDown(r: number, c: number, v: number): void;
   onMouseUp(r: number, c: number): void;
+  onClick(r: number, c: number): void;
   col: Array<number>;
 }
 
@@ -23,6 +24,7 @@ function Row(props: props) {
             onMouseLeave={useCallback(props.onMouseLeave, [])}
             onMouseDown={useCallback(props.onMouseDown, [])}
             onMouseUp={useCallback(props.onMouseUp, [])}
+            onClick={useCallback(props.onClick, [])}
           />
         );
       })}
