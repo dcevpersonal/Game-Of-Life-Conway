@@ -7,7 +7,6 @@ interface props {
   onMouseLeave(r: number, c: number): void;
   onMouseDown(r: number, c: number, v: number): void;
   onMouseUp(r: number, c: number): void;
-  onClick(r: number, c: number): void;
   active: number;
 }
 
@@ -24,9 +23,6 @@ function Square(props: props) {
       }}
       onMouseUp={() => {
         props.onMouseUp(props.row, props.col);
-      }}
-      onClick={() => {
-        props.onClick(props.row, props.col);
       }}
     ></td>
   );

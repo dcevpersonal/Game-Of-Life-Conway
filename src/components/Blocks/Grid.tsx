@@ -9,10 +9,10 @@ interface props {
 }
 
 function Grid(props: props) {
-  //   const row = Math.round(window.innerHeight / 26);
-  //   const col = Math.round(window.innerWidth / 26);
-  const row = 15;
-  const col = 15;
+  const row = Math.round(window.innerHeight / 26);
+  const col = Math.round(window.innerWidth / 26);
+  //   const row = 15;
+  //   const col = 15;
 
   const operations = [
     [-1, -1],
@@ -46,14 +46,13 @@ function Grid(props: props) {
   }, []);
 
   const setMouseDown = useCallback((r: number, c: number, v: number) => {
-    setSquare(r, c);
     setMouseHold(true);
     setHoldingValue(v);
   }, []);
 
   const setMouseUp = useCallback((r: number, c: number) => {
-    setSquare(r, c);
     setMouseHold(false);
+    setSquare(r, c);
   }, []);
 
   const setMouseLeave = useCallback((r: number, c: number) => {
@@ -131,7 +130,6 @@ function Grid(props: props) {
               onMouseLeave={setMouseLeave}
               onMouseDown={setMouseDown}
               onMouseUp={setMouseUp}
-              onClick={setSquare}
             />
           );
         })}
