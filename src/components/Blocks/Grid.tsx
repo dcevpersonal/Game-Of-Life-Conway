@@ -9,8 +9,10 @@ interface props {
 }
 
 function Grid(props: props) {
-  const row = Math.round(window.innerHeight / 26);
-  const col = Math.round(window.innerWidth / 26);
+  const row = Math.floor((window.innerHeight - 50) / 27);
+  const col = Math.floor(window.innerWidth / 27);
+  console.log(document.documentElement.clientHeight);
+
   //   const row = 15;
   //   const col = 15;
 

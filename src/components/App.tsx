@@ -24,9 +24,9 @@ function App() {
   const [buttonText, setButtonText] = useState("Start");
   return (
     <div className="App">
+      <Grid simRunning={simRunning} simReseting={simReseting} />
       <Button onClick={setSimRun} text={buttonText} />
       <Button onClick={setSimReset} text="Reset" />
-      <Grid simRunning={simRunning} simReseting={simReseting} />
     </div>
   );
 }
