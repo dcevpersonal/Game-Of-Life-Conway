@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import DisplayPanel from "./Ui/Display-Panel";
 import Grid from "./Blocks/Grid";
 import ControlsPanel from "./Ui/Control-Panel";
+import CopyRightPanel from "./Ui/CopyRight-Panel";
 import "./App.scss";
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
         setSimRun={setSimRun}
         Button_Text_1={buttonText}
       />
+      <CopyRightPanel />
     </div>
   );
 }

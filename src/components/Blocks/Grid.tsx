@@ -14,11 +14,10 @@ interface props {
 
 function Grid(props: props) {
   //Initial Setup
-  const row = Math.floor((window.innerHeight - 160) / 27);
-  const col = Math.floor(window.innerWidth / 27);
 
-  // const row = 15;
-  // const col = 15;
+  const [row] = useState(Math.floor((window.innerHeight - 160) / 27));
+
+  const [col] = useState(Math.floor(window.innerWidth / 27));
 
   const operations = [
     [-1, -1],

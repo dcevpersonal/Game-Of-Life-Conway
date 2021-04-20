@@ -22,6 +22,7 @@ function DisplayPanel(props: props) {
             : "Fast"
         }
       />
+
       <Range onChange={props.setSimSpeed} />
       <Text text={"Steps-" + props.stepsCounter} />
     </div>
