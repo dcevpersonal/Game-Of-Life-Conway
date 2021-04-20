@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import DisplayPanel from "./Ui/Display-Panel";
 import Grid from "./Blocks/Grid";
 import ControlsPanel from "./Ui/Control-Panel";
 import "./App.scss";
@@ -25,16 +26,28 @@ function App() {
     });
   }, []);
 
+  const setSimSpeed = useCallback(
+    (event: React.FormEvent<HTMLInputElement>) => {
+      console.log(event.currentTarget.valueAsNumber);
+
+      setSimSpeedometer(event.currentTarget.valueAsNumber);
+    },
+    []
+  );
+
   const [simRunning, setSimRunning] = useState(false);
   const [simReseting, setSimReseting] = useState(false);
   const [simRandom, setSimRandomize] = useState(false);
+  const [simSpeedometer, setSimSpeedometer] = useState(1000);
   const [buttonText, setButtonText] = useState("Start");
   return (
     <div className="App">
+      <DisplayPanel setSimSpeed={setSimSpeed} />
       <Grid
         simRunning={simRunning}
         simReseting={simReseting}
         simRandom={simRandom}
+        simSpeedometer={simSpeedometer}
       />
       <ControlsPanel
         setSimRandom={setSimRandom}

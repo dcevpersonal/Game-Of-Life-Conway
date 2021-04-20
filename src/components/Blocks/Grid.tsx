@@ -7,11 +7,12 @@ interface props {
   simRunning: boolean;
   simReseting: boolean;
   simRandom: boolean;
+  simSpeedometer: number;
 }
 
 function Grid(props: props) {
   //Initial Setup
-  const row = Math.floor((window.innerHeight - 80) / 27);
+  const row = Math.floor((window.innerHeight - 160) / 27);
   const col = Math.floor(window.innerWidth / 27);
 
   // const row = 15;
@@ -92,7 +93,7 @@ function Grid(props: props) {
           });
         });
       });
-      setTimeout(startSimulation, 600);
+      setTimeout(startSimulation, simSpeedometerRef.current);
     }
   };
 
@@ -145,6 +146,9 @@ function Grid(props: props) {
   const [firstRender, setFirstRender] = useState(true);
   const firstRenderRef = useRef(firstRender);
   firstRenderRef.current = firstRender;
+
+  const simSpeedometerRef = useRef(props.simSpeedometer);
+  simSpeedometerRef.current = props.simSpeedometer;
 
   //Effects
   useEffect(() => {
