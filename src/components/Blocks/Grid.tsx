@@ -8,6 +8,8 @@ interface props {
   simReseting: boolean;
   simRandom: boolean;
   simSpeedometer: number;
+  addStepsCounter(): void;
+  resetStepsCounter(): void;
 }
 
 function Grid(props: props) {
@@ -88,9 +90,6 @@ function Grid(props: props) {
               }
             }
           }
-          setStepsCounter((s) => {
-            return s++;
-          });
         });
       });
       setTimeout(startSimulation, simSpeedometerRef.current);
@@ -99,6 +98,7 @@ function Grid(props: props) {
 
   const resetGrid = () => {
     setGrid(() => {
+      props.resetStepsCounter();
       return generateEmptyArray();
     });
   };
@@ -108,10 +108,7 @@ function Grid(props: props) {
     setGrid((g) => {
       return produce(g, (newGrid) => {
         for (let i = Math.floor(Math.random() * row); i < row; i++) {
-          console.log("Row:" + i);
-
           for (let i = Math.floor(Math.random() * col); i < col; i++) {
-            console.log("Col:" + i);
             newGrid[Math.floor(Math.random() * row)][
               Math.floor(Math.random() * col)
             ] = Math.floor(Math.random() * 2);
@@ -119,6 +116,13 @@ function Grid(props: props) {
         }
       });
     });
+  };
+
+  const starCounting = () => {
+    if (simRunningRef.current) {
+      props.addStepsCounter();
+      setTimeout(starCounting, simSpeedometerRef.current);
+    }
   };
 
   //States
@@ -139,10 +143,6 @@ function Grid(props: props) {
   const simRunningRef = useRef(props.simRunning);
   simRunningRef.current = props.simRunning;
 
-  const [stepsCounter, setStepsCounter] = useState(0);
-  const stepsCounterRef = useRef(stepsCounter);
-  stepsCounterRef.current = stepsCounter;
-
   const [firstRender, setFirstRender] = useState(true);
   const firstRenderRef = useRef(firstRender);
   firstRenderRef.current = firstRender;
@@ -153,6 +153,7 @@ function Grid(props: props) {
   //Effects
   useEffect(() => {
     startSimulation();
+    starCounting();
   }, [props.simRunning]);
 
   useEffect(() => {

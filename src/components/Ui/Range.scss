@@ -1,15 +1,15 @@
 .Range {
     width: 20%;
-    min-width: 180px;
+    min-width: 120px;
     max-width: 200px;
     height: 4px;
     appearance: none;
     background: var(--Green-1);
     transform: rotate(-180deg);
-    margin-left: 20px;
 
     &::-webkit-slider-thumb {
         appearance: none;
+        cursor: pointer;
         width: 20px;
         height: 20px;
         background: var(--Green-1);

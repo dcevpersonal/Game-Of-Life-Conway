@@ -8,12 +8,13 @@ interface props {
 function Range(props: props) {
   return (
     <input
+      id="Range"
       type="range"
       min="100"
       max="1000"
       className="Range"
       onChange={props.onChange}
-      defaultValue="1000"
+      defaultValue="600"
       step="100"
     />
   );
