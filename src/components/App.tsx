@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Grid from "./Blocks/Grid";
-import Button from "./Ui/Button";
+import ControlsPanel from "./Ui/Control-Panel";
 import "./App.scss";
 
 function App() {
@@ -19,14 +19,29 @@ function App() {
     });
   }, []);
 
+  const setSimRandom = useCallback(() => {
+    setSimRandomize((s) => {
+      return s ? false : true;
+    });
+  }, []);
+
   const [simRunning, setSimRunning] = useState(false);
   const [simReseting, setSimReseting] = useState(false);
+  const [simRandom, setSimRandomize] = useState(false);
   const [buttonText, setButtonText] = useState("Start");
   return (
     <div className="App">
-      <Grid simRunning={simRunning} simReseting={simReseting} />
-      <Button onClick={setSimRun} text={buttonText} />
-      <Button onClick={setSimReset} text="Reset" />
+      <Grid
+        simRunning={simRunning}
+        simReseting={simReseting}
+        simRandom={simRandom}
+      />
+      <ControlsPanel
+        setSimRandom={setSimRandom}
+        setSimReset={setSimReset}
+        setSimRun={setSimRun}
+        Button_Text_1={buttonText}
+      />
     </div>
   );
 }

@@ -6,15 +6,16 @@ import "./Grid.scss";
 interface props {
   simRunning: boolean;
   simReseting: boolean;
+  simRandom: boolean;
 }
 
 function Grid(props: props) {
-  const row = Math.floor((window.innerHeight - 50) / 27);
+  //Initial Setup
+  const row = Math.floor((window.innerHeight - 80) / 27);
   const col = Math.floor(window.innerWidth / 27);
-  console.log(document.documentElement.clientHeight);
 
-  //   const row = 15;
-  //   const col = 15;
+  // const row = 15;
+  // const col = 15;
 
   const operations = [
     [-1, -1],
@@ -27,6 +28,7 @@ function Grid(props: props) {
     [1, 1],
   ];
 
+  //Methods
   const generateEmptyArray = () => {
     const rows = [];
     for (let i = 0; i < row; i++) {
@@ -47,6 +49,7 @@ function Grid(props: props) {
     });
   }, []);
 
+  //Events
   const setMouseDown = useCallback((r: number, c: number, v: number) => {
     setMouseHold(true);
     setHoldingValue(v);
@@ -63,6 +66,7 @@ function Grid(props: props) {
     }
   }, []);
 
+  //Controls
   const startSimulation = () => {
     if (simRunningRef.current) {
       setGrid((g) => {
@@ -83,6 +87,9 @@ function Grid(props: props) {
               }
             }
           }
+          setStepsCounter((s) => {
+            return s++;
+          });
         });
       });
       setTimeout(startSimulation, 600);
@@ -95,6 +102,25 @@ function Grid(props: props) {
     });
   };
 
+  const generateRandomGrid = () => {
+    resetGrid();
+    setGrid((g) => {
+      return produce(g, (newGrid) => {
+        for (let i = Math.floor(Math.random() * row); i < row; i++) {
+          console.log("Row:" + i);
+
+          for (let i = Math.floor(Math.random() * col); i < col; i++) {
+            console.log("Col:" + i);
+            newGrid[Math.floor(Math.random() * row)][
+              Math.floor(Math.random() * col)
+            ] = Math.floor(Math.random() * 2);
+          }
+        }
+      });
+    });
+  };
+
+  //States
   const [grid, setGrid] = useState(() => {
     return generateEmptyArray();
   });
@@ -112,6 +138,15 @@ function Grid(props: props) {
   const simRunningRef = useRef(props.simRunning);
   simRunningRef.current = props.simRunning;
 
+  const [stepsCounter, setStepsCounter] = useState(0);
+  const stepsCounterRef = useRef(stepsCounter);
+  stepsCounterRef.current = stepsCounter;
+
+  const [firstRender, setFirstRender] = useState(true);
+  const firstRenderRef = useRef(firstRender);
+  firstRenderRef.current = firstRender;
+
+  //Effects
   useEffect(() => {
     startSimulation();
   }, [props.simRunning]);
@@ -120,8 +155,16 @@ function Grid(props: props) {
     resetGrid();
   }, [props.simReseting]);
 
+  useEffect(() => {
+    if (firstRenderRef.current) {
+      setFirstRender(false);
+    } else {
+      generateRandomGrid();
+    }
+  }, [props.simRandom]);
+
   return (
-    <table>
+    <table className="Grid">
       <tbody>
         {grid.map((e, i) => {
           return (
