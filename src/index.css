@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 
 * {
   --Green-1: #43a047;
@@ -19,4 +19,21 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--Black-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #757575;
+  transition: background 0.1s ease-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--Green-1);
 }

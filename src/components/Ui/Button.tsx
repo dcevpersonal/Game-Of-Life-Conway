@@ -1,13 +1,14 @@
 import React from "react";
-import "./Button.scss";
+import Style from "./Button.module.scss";
 interface props {
   onClick(): void;
   text: string;
+  id: string;
 }
 
 function Button(props: props) {
   return (
-    <button className="Button" id="Button" onClick={props.onClick}>
+    <button className={Style.Button} id={props.id} onClick={props.onClick}>
       {props.text}
     </button>
   );

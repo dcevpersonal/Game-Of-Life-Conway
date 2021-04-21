@@ -3,11 +3,12 @@ import "./Text.scss";
 
 interface props {
   text: string;
+  id: string;
 }
 
 function Text(props: props) {
   return (
-    <h1 className="Text" id="Text">
+    <h1 className="Text" id={props.id}>
       {props.text}
     </h1>
   );

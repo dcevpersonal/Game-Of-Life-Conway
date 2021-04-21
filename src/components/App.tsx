@@ -3,7 +3,7 @@ import DisplayPanel from "./Ui/Display-Panel";
 import Grid from "./Blocks/Grid";
 import ControlsPanel from "./Ui/Control-Panel";
 import CopyRightPanel from "./Ui/CopyRight-Panel";
-import "./App.scss";
+import Style from "./App.module.scss";
 
 function App() {
   const setSimRun = useCallback(() => {
@@ -54,7 +54,7 @@ function App() {
   stepsCounterRef.current = stepsCounter;
 
   return (
-    <div className="App">
+    <div className={Style.App}>
       <DisplayPanel
         setSimSpeed={setSimSpeed}
         simSpeedometer={simSpeedometer}
@@ -73,8 +73,9 @@ function App() {
         setSimReset={setSimReset}
         setSimRun={setSimRun}
         Button_Text_1={buttonText}
+        id={Style.ControlPanel}
       />
-      <CopyRightPanel />
+      <CopyRightPanel id={Style.CopyRightPanel} />
     </div>
   );
 }

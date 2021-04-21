@@ -1,6 +1,6 @@
 import React from "react";
 import Range from "./Range";
-import "./Display-Panel.scss";
+import Style from "./Display-Panel.module.scss";
 
 import Text from "./Text";
 
@@ -12,8 +12,9 @@ interface props {
 
 function DisplayPanel(props: props) {
   return (
-    <div className="DisplayPanel">
+    <div className={Style.DisplayPanel}>
       <Text
+        id={Style.Text}
         text={
           props.simSpeedometer > 600
             ? "Slow"
@@ -23,8 +24,8 @@ function DisplayPanel(props: props) {
         }
       />
 
-      <Range onChange={props.setSimSpeed} />
-      <Text text={"Steps-" + props.stepsCounter} />
+      <Range onChange={props.setSimSpeed} id={Style.Range} />
+      <Text text={"Steps-" + props.stepsCounter} id={Style.Text} />
     </div>
   );
 }

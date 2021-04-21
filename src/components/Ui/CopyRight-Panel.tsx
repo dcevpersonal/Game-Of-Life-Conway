@@ -1,9 +1,18 @@
 import React from "react";
+import Style from "./CopyRight-Panel.module.scss";
 import Text from "./Text";
-function CopyRightPanel() {
+
+interface props {
+  id: string;
+}
+
+function CopyRightPanel(props: props) {
   return (
-    <div className="CopyRightPanel" id="CopyRightPanel">
-      {/* <Text text="Daniel Lane" /> */}
+    <div className={Style.CopyRightPanel} id={props.id}>
+      <Text
+        text={"© Daniel Lane (Lazarev) - " + new Date().getFullYear()}
+        id={Style.Text}
+      />
     </div>
   );
 }

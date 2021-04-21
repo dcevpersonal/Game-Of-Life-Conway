@@ -2,4 +2,7 @@
     font-size: 1.2rem;
     font-family: "Play", sans-serif;
     color: white;
+    &::selection {
+        background: var(--Green-1);
+    }
 }
