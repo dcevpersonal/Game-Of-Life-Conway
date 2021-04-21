@@ -7,9 +7,14 @@
     justify-content: center;
 }
 
-#Button {
+#Button_1 {
+    margin: 0;
+}
+
+#Button_2 {
     margin-left: 30px;
-    &:nth-child(1) {
-        margin: 0;
-    }
+}
+
+#Button_3 {
+    margin-left: 30px;
 }

@@ -16,10 +16,10 @@ function ControlPanel(props: props) {
       <Button
         onClick={props.setSimRun}
         text={props.Button_Text_1}
-        id={Style.Button}
+        id={Style.Button_1}
       />
-      <Button onClick={props.setSimReset} text="Reset" id={Style.Button} />
-      <Button onClick={props.setSimRandom} text="Random" id={Style.Button} />
+      <Button onClick={props.setSimReset} text="Reset" id={Style.Button_2} />
+      <Button onClick={props.setSimRandom} text="Random" id={Style.Button_3} />
     </div>
   );
 }

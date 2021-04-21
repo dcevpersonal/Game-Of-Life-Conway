@@ -4,10 +4,8 @@ import Grid from "./Blocks/Grid";
 import ControlsPanel from "./Ui/Control-Panel";
 import CopyRightPanel from "./Ui/CopyRight-Panel";
 import Style from "./App.module.scss";
-import reportWebVitals from "../reportWebVitals";
 
 function App() {
-  reportWebVitals(console.log);
   const setSimRun = useCallback(() => {
     setSimRunning((s) => {
       return s ? false : true;

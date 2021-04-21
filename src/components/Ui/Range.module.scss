@@ -1,0 +1,33 @@
+.Range {
+    width: 20%;
+
+    &__Input {
+        width: 100%;
+        min-width: 120px;
+        max-width: 200px;
+        height: 4px;
+        appearance: none;
+        background: var(--Green-1);
+        transform: rotate(-180deg);
+        &::-webkit-slider-thumb {
+            appearance: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: var(--Green-1);
+            transition: background 0.1s ease-out;
+            transition-property: background, transform;
+            &:active {
+                transform: scale(0.9);
+            }
+            &:hover {
+                background: var(--Green-2);
+            }
+        }
+    }
+
+    &__Label {
+        position: absolute;
+        z-index: -1;
+    }
+}
