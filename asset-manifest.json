@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Game-Of-Life-Conway/static/css/main.d02df2b8.chunk.css",
-    "main.js": "/Game-Of-Life-Conway/static/js/main.264972c3.chunk.js",
-    "main.js.map": "/Game-Of-Life-Conway/static/js/main.264972c3.chunk.js.map",
+    "main.js": "/Game-Of-Life-Conway/static/js/main.77cf44a2.chunk.js",
+    "main.js.map": "/Game-Of-Life-Conway/static/js/main.77cf44a2.chunk.js.map",
     "runtime-main.js": "/Game-Of-Life-Conway/static/js/runtime-main.7b8d00ac.js",
     "runtime-main.js.map": "/Game-Of-Life-Conway/static/js/runtime-main.7b8d00ac.js.map",
     "static/js/2.9dcbd9a9.chunk.js": "/Game-Of-Life-Conway/static/js/2.9dcbd9a9.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7b8d00ac.js",
     "static/js/2.9dcbd9a9.chunk.js",
     "static/css/main.d02df2b8.chunk.css",
-    "static/js/main.264972c3.chunk.js"
+    "static/js/main.77cf44a2.chunk.js"
   ]
 }
