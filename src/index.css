@@ -15,7 +15,7 @@
 html,
 body {
   box-sizing: border-box;
-  background: var(--Black-2);
+  background: var(--Black-1);
   font-size: 16px;
   margin: 0;
   padding: 0;
