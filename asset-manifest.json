@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Game-Of-Life-Conway/static/css/main.d02df2b8.chunk.css",
+    "main.js": "/Game-Of-Life-Conway/static/js/main.264972c3.chunk.js",
+    "main.js.map": "/Game-Of-Life-Conway/static/js/main.264972c3.chunk.js.map",
+    "runtime-main.js": "/Game-Of-Life-Conway/static/js/runtime-main.7b8d00ac.js",
+    "runtime-main.js.map": "/Game-Of-Life-Conway/static/js/runtime-main.7b8d00ac.js.map",
+    "static/js/2.9dcbd9a9.chunk.js": "/Game-Of-Life-Conway/static/js/2.9dcbd9a9.chunk.js",
+    "static/js/2.9dcbd9a9.chunk.js.map": "/Game-Of-Life-Conway/static/js/2.9dcbd9a9.chunk.js.map",
+    "index.html": "/Game-Of-Life-Conway/index.html",
+    "static/css/main.d02df2b8.chunk.css.map": "/Game-Of-Life-Conway/static/css/main.d02df2b8.chunk.css.map",
+    "static/js/2.9dcbd9a9.chunk.js.LICENSE.txt": "/Game-Of-Life-Conway/static/js/2.9dcbd9a9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b8d00ac.js",
+    "static/js/2.9dcbd9a9.chunk.js",
+    "static/css/main.d02df2b8.chunk.css",
+    "static/js/main.264972c3.chunk.js"
+  ]
+}
