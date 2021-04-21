@@ -1,7 +1,6 @@
 {
   "name": "game-of-life",
   "version": "0.1.0",
-  "homepage": "https://dcevpersonal.github.io/Game-Of-Life-Conway/", 
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
