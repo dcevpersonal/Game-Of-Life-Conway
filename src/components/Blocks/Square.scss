@@ -6,16 +6,19 @@
     transition-property: background, transform;
     animation: Appear 1s ease-out;
 
-    &:hover {
-        background: var(--Green-2);
-    }
-
     &--Active {
         background: var(--Green-2);
-
         animation: AppearActive 0.2s ease-out;
         &:active {
             background: var(--Red-1);
+        }
+    }
+}
+
+@media (hover: hover) {
+    .Square {
+        &:hover {
+            background: var(--Green-2);
         }
     }
 }
