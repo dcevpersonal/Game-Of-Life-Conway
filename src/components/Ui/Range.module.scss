@@ -16,8 +16,28 @@
             width: 20px;
             height: 20px;
             background: var(--Green-1);
+            border: none;
+            border-radius: 50%;
             transition: background 0.1s ease-out;
             transition-property: background, transform;
+
+            &:active {
+                transform: scale(0.9);
+            }
+            &:hover {
+                background: var(--Green-2);
+            }
+        }
+
+        &::-moz-range-thumb {
+            appearance: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: var(--Green-1);
+            transition: background 0.1s ease-out;
+            transition-property: background, transform;
+            border: none;
             border-radius: 50%;
 
             &:active {
