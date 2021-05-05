@@ -9,13 +9,14 @@
     outline: none;
     font-size: 1.2rem;
     font-family: "Play", sans-serif;
-    border: 3px solid var(--Green-1);
+    background: var(--Green-1);
+    border: none;
     transition: all 0.1s ease-out;
     transition-property: background, transform;
     border-radius: 100px;
     &:hover,
     &:focus {
-        background: var(--Green-1);
+        background: var(--Green-2);
     }
     &:active {
         transform: scale(0.9);
