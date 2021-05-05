@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
 
 * {
-  --Green-1: #43a047;
-  --Green-2: #7cb342;
-  --Black-1: #212121;
-  --Black-2: #263238;
-  --Black-3: #37474f;
-  --Red-1: #f4511e;
+  --Green-1: #4caf4f;
+  --Green-2: #7aaf4c;
+  --Black-1: rgba(255, 255, 255, 0.08);
+  --Black-2: #121212;
+  --Black-3: rgba(255, 255, 255, 0.4);
+  --Red-1: #f44336;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -26,12 +26,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--Black-1);
+  background: var(--Black-2);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #757575;
+  background: var(--Black-3);
   transition: background 0.1s ease-out;
+  border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

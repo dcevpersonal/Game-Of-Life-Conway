@@ -9,6 +9,7 @@
         appearance: none;
         background: var(--Green-1);
         transform: rotate(-180deg);
+        border-radius: 100px;
         &::-webkit-slider-thumb {
             appearance: none;
             cursor: pointer;
@@ -17,6 +18,8 @@
             background: var(--Green-1);
             transition: background 0.1s ease-out;
             transition-property: background, transform;
+            border-radius: 50%;
+
             &:active {
                 transform: scale(0.9);
             }
