@@ -6,7 +6,7 @@
     transition-property: background, transform;
     animation: Appear 1s ease-out;
 
-    &--Active {
+    &__Active {
         background: var(--Green-1);
         animation: AppearActive 0.2s ease-out;
         &:active {

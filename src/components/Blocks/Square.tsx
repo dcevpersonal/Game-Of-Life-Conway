@@ -1,5 +1,5 @@
 import React from "react";
-import "./Square.scss";
+import Style from "./Square.module.scss";
 
 interface props {
   row: number;
@@ -13,7 +13,11 @@ interface props {
 function Square(props: props) {
   return (
     <td
-      className={`Square ${props.active === 1 ? "Square--Active" : ""}`}
+      className={
+        props.active === 1
+          ? `${Style.Square} ${Style.Square__Active}`
+          : Style.Square
+      }
       key={`${props.row}-${props.col}`}
       onMouseLeave={() => {
         props.onMouseLeave(props.row, props.col);

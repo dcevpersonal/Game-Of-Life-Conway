@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import produce from "immer";
 import Row from "./Row";
-import "./Grid.scss";
+import Style from "./Grid.module.scss";
 
 interface props {
   simRunning: boolean;
@@ -168,7 +168,7 @@ function Grid(props: props) {
   }, [props.simRandom]);
 
   return (
-    <table className="Grid">
+    <table className={Style.Grid}>
       <tbody>
         {grid.map((e, i) => {
           return (

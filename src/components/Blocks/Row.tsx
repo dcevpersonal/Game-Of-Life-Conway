@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import Square from "./Square";
-import "./Row.scss";
+import Style from "./Row.module.scss";
 
 interface props {
   iden: number;
@@ -12,7 +12,7 @@ interface props {
 
 function Row(props: props) {
   return (
-    <tr className="Row">
+    <tr className={Style.Row}>
       {props.col.map((e, i) => {
         return (
           <Square
