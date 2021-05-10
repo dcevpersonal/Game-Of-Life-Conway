@@ -8,6 +8,7 @@
   --Black-3: rgba(255, 255, 255, 0.4);
   --Red-1: #f44336;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
 }
