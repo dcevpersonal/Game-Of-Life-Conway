@@ -9,15 +9,15 @@ interface props {
 function Range(props: props) {
   return (
     <div id={props.id} className={Style.Range}>
-      <label htmlFor={Style.Range__Input} className={Style.Range__Label}>
+      <label htmlFor={Style.Range_Input} className={Style.Range_Label}>
         Speedometer
       </label>
       <input
         type="range"
         min="100"
         max="1000"
-        id={Style.Range__Input}
-        className={Style.Range__Input}
+        id={Style.Range_Input}
+        className={Style.Range_Input}
         onChange={props.onChange}
         defaultValue="600"
         step="100"
