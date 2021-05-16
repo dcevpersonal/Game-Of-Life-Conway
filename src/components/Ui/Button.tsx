@@ -8,7 +8,12 @@ interface props {
 
 function Button(props: props) {
   return (
-    <button className={Style.Button} id={props.id} onClick={props.onClick}>
+    <button
+      className={Style.Button}
+      id={props.id}
+      onClick={props.onClick}
+      title={props.text}
+    >
       {props.text}
     </button>
   );

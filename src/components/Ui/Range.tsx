@@ -21,6 +21,7 @@ function Range(props: props) {
         onChange={props.onChange}
         defaultValue="600"
         step="100"
+        title="Speed"
       />
     </div>
   );

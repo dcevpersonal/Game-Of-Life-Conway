@@ -8,7 +8,7 @@ interface props {
 
 function Text(props: props) {
   return (
-    <h1 className="Text" id={props.id}>
+    <h1 className="Text" id={props.id} title={props.text}>
       {props.text}
     </h1>
   );
